@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Преглед на кауза</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/charity.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/596f1933be.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="loadCauseInfo()">
+    <header onclick="location.href='home.html'">
+        <div class="title-logo-wrapper" onclick="location.href='home.html'">
+            <div class="title">Charity</div>
+            <img class="header-logo" src="images/logo_notext.png">
+            <div class="title">Champs</div>
+        </div>
+    </header>
+    <main>
+        <nav class="navbar">
+            <div class="links-wrapper">
+                <a href="my-profile.html" class="link welcome">
+                    Добре дошъл, <span id="welcome"></span>
+                </a>
+                <a class="link" href="home.html">Начало</a>
+                <a class="link" href="catalog.html">Каузи</a>
+            </div>
+
+            <div class="actions-wrapper">
+                <button class="create-btn" type="button" onclick="location.href='create-cause.html'">Създай
+                    кауза</button>
+
+                <button class="create-btn" type="button" onclick="location.href='chat-login.html'">Чат
+                </button>
+            </div>
+        </nav>
+
+        <section class="content">
+            <h2 class="charity-heading"></h2>
+            <div class="charity-content">
+                <div class="charity-text">
+                </div>
+                <div class="img-join-wrapper">
+                    <img class="charity-image" id="causeImage">
+                    <div class="join-wrapper">
+                        <div class="date">
+                            <span>Начало: <strong id="start"></strong></span>
+                            <span>Край: <strong id="end"></strong></span>
+                        </div>
+
+                        <button onclick="joinCause()" class="join-btn">Включи се!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="./js/notifications.js"></script>
+    <script src="./js/charity.js"></script>
+</body>
+
+</html>

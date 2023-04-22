@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Начало</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/homepage.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/catalog.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/596f1933be.js" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+
+</head>
+
+<body onload="getFilters();">
+    <header onclick="location.href='home.html'">
+        <div class="title-logo-wrapper" onclick="location.href='home.html'">
+            <div class="title">Charity</div>
+            <img class="header-logo" src="images/logo_notext.png">
+            <div class="title">Champs</div>
+        </div>
+    </header>
+    <main>
+        <nav class="navbar">
+            <div class="links-wrapper">
+                <a href="my-profile.html" class="link welcome">
+                    Добре дошъл, <span id="welcome"></span>
+                </a>
+                <a class="link" href="home.html">Начало</a>
+                <a class="link" href="catalog.html">Каузи</a>
+            </div>
+
+            <div class="actions-wrapper">
+                <button class="create-btn" type="button" onclick="location.href='create-cause.html'">Създай
+                    кауза</button>
+
+                <button class="create-btn" type="button" onclick="location.href='chat-login.html'">Чат
+                </button>
+            </div>
+        </nav>
+
+        <section class="main-page">
+
+            <section class="categories-wrapper">
+                <div class="filters-header">
+                    <h2 class="filters-heading">Филтри</h2>
+                </div>
+                <div id="filters" class="filters-list">
+                    <div class="switch-wrapper">
+                        <label class="switch">
+                            <input id="isUrgent-btn" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        Спешни каузи
+                    </div>
+                    <div class="filter-item">
+                        <div class="filter-heading" onclick="changeVisibility(0)">
+                            <h3 class="filter-name">Категория</h3>
+                            <button class="expand-category-button"><i class="fa">&#xf105;</i></button>
+                        </div>
+                        <div class="options-wrapper no-display">
+                        </div>
+                    </div>
+
+                    <div class="filter-item">
+                        <div class="filter-heading" onclick="changeVisibility(1)">
+                            <h3 class="filter-name">Времетраене</h3>
+                            <button class="expand-category-button"><i class="fa">&#xf105;</i></button>
+                        </div>
+                        <div class="options-wrapper no-display">
+                        </div>
+                    </div>
+
+                    <div class="filter-item">
+                        <div class="filter-heading" onclick="changeVisibility(2)">
+                            <h3 class="filter-name">Локация</h3>
+                            <button class="expand-category-button"><i class="fa">&#xf105;</i></button>
+                        </div>
+                        <div class="options-wrapper no-display">
+                            <div class="switch-wrapper-location">
+                                <label class="switch-location">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                Близо до мен
+                            </div>
+                        </div>
+                        <div class="switch-wrapper-location">
+                            <label class="switch-location">
+                              <input id="closest-btn" type="checkbox">
+                              <span class="slider round"></span>
+                            </label>
+                            Близо до мен
+                          </div>
+                    </div>
+                    <!-- TODO: още градове и други филтри -->
+                    <button class="save-filters-btn" id="save-filters">Запази филтри</button>
+                </div>
+            </section>
+
+            <section class="map">
+                <h2 class="map-header">Къде има нужда от помощ точно сега?</h2>
+                <div class="mapouter">
+                    <div class="gmap_canvas" id="map">
+
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
+        </section>
+
+    </main>
+    <script src="./js/index.js"></script>
+    <script type="module" src="./js/map.js"></script>
+    <script type="module" src="./js/notifications.js"></script>
+</body>
+
+</html>
